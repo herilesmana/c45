@@ -1,0 +1,20 @@
+{
+    "name": "herilesmana/c45",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Heri Lesmana",
+            "email": "herilesmanapribadi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "herilesmana/data-reader": "^1.0"
+    },
+    "autoload": {
+         "psr-4": {
+            "C45\\": "src/"
+        }
+    }
+}
