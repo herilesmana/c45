@@ -213,7 +213,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use C45\C45;
 
-$attributs = [...];
+$attributes = [...];
 $data = [...];
 
 $c45 = new C45([
