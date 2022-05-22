@@ -184,6 +184,36 @@ class TreeNode
     }
 
     /**
+     * Generates a JsTree.js data.
+     *
+     * @return array
+     */
+
+    public function toJsTree()
+    {
+        $data = [];
+        foreach ($this->values as $key => $child) {
+            $_data = [];
+            $_data['text'] = '<strong>IF</strong> '.$this->attribute.' <strong>IS</strong> '.$key. ' <strong>THEN</strong> ';
+            $_data['state'] = [
+                'opened' => true,
+                'disabled' => true,
+            ];
+
+            if ($child->getIsLeaf()) {
+                $classCount = $this->getInstanceCountAsString($key);
+                $_data['text'] = $_data['text'].$child->getChild('result').' '.$classCount;
+            } else {
+                $_data['children'] = $child->toJsTree();
+            }
+
+            $data[] = $_data;
+        }
+
+        return $data;
+    }
+
+    /**
      * Generates a string representation of the tree.
      *
      * @param string $tabs
