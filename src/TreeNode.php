@@ -184,6 +184,33 @@ class TreeNode
     }
 
     /**
+     * Generates a json representation of the tree.
+     *
+     * @return array
+     */
+
+    public function toJson()
+    {
+        $data = [];
+        foreach ($this->values as $key => $child) {
+            $_data = [];
+            $_data['attribute'] = $this->attribute;
+            $_data['is'] = $key;
+
+            if ($child->getIsLeaf()) {
+                $classCount = $this->getInstanceCountAsString($key);
+                $_data['then'] = $child->getChild('result').' '.$classCount;
+            } else {
+                $_data['then'] = $child->toJson();
+            }
+
+            $data[] = $_data;
+        }
+
+        return $data;
+    }
+
+    /**
      * Generates a JsTree.js data.
      *
      * @return array
