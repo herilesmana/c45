@@ -21,6 +21,15 @@ class C45
 
     const SPLIT_GAIN = 0;
     const SPLIT_GAIN_RATIO = 1;
+    
+    /**
+     * @var array
+     */
+    protected $language = [
+        'if' => 'IF',
+        'is' => 'IS',
+        'then' => 'THEN'
+    ];
 
     /**
      * @var array
@@ -121,6 +130,10 @@ class C45
 
     private function assignConfig(array $config)
     {
+        if(array_key_exists('language', $config) {
+            $this->language = $config['language'];
+        }
+           
         foreach (self::REQUIRED_CONFIG as $value) {
             $this->$value = $config[$value];
         }
