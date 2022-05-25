@@ -23,6 +23,11 @@ class TreeNode
      * @var array Attribute's values
      */
     protected $values;
+    
+    /**
+     * @var array Attribute's values
+     */
+    protected $language;
 
     /**
      * @var array Classes count for this node and its child
@@ -48,6 +53,14 @@ class TreeNode
     public function getParent()
     {
         return $this->parent;
+    }
+    
+    /**
+     * Set language.
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
     }
 
     /**
