@@ -234,7 +234,7 @@ class TreeNode
         $data = [];
         foreach ($this->values as $key => $child) {
             $_data = [];
-            $_data['text'] = '<strong>'.$this->language['if'].'</strong> '.$this->attribute.' <strong>'.$this->language('is').'</strong> '.$key. ' <strong>'.$this->language('then').'</strong> ';
+            $_data['text'] = '<strong>'.$this->language['if'].'</strong> '.$this->attribute.' <strong>'.$this->language['is'].'</strong> '.$key. ' <strong>'.$this->language['then'].'</strong> ';
             $_data['state'] = [
                 'opened' => true,
                 'disabled' => true,

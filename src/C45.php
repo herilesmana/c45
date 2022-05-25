@@ -130,7 +130,7 @@ class C45
 
     private function assignConfig(array $config)
     {
-        if(array_key_exists('language', $config) {
+        if(array_key_exists('language', $config)) {
             $this->language = $config['language'];
         }
            
