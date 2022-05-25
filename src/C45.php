@@ -168,6 +168,8 @@ class C45
         // END of PRUNING-PRUNINGAN
 
         $checkClass = $this->isBelongToOneClass($criteria);
+        
+        $treeNode->setLanguage($this->language);
 
         if ($checkClass['return']) {
             $treeNode->setAttribute($this->targetAttribute);
